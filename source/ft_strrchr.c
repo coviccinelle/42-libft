@@ -11,26 +11,20 @@
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
-size_t	ft_strlen(const char *str)
-{
-	int i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return(i);
-}
-char *	ft_strrchr(const char *str, int c)
-{
-	int i = ft_strlen(str);;
-	char ct;
+size_t	ft_strlen(const char *str);
 
+char	*ft_strrchr(const char *str, int c)
+{
+	int		i;
+	char	ct;
+
+	i = ft_strlen(str);
 	ct = (char)c;
-
-	while(*str)
+	while (*str)
 	{
-		if(str[i] == ct)
-			return(char *)&str[i];
+		if (str[i] == ct)
+			return (char *)&str[i];
 		i--;
 	}
 	return (0);

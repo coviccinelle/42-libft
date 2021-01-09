@@ -9,7 +9,9 @@
 /*   Updated: 2021/01/07 18:31:24 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <../includes/libft.h>
+
 void	ft_putstr_fd(char *str, int fd)
 {
 	{

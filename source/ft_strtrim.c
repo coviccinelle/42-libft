@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
-int		ft_strlen(char const *str);
+
+int			ft_strlen(char const *str);
+
 char		*ft_substr(char const *str, unsigned int start, size_t len);
 
 static int	ft_check_left(char const *s, char const *set)
@@ -30,8 +32,8 @@ static int	ft_check_left(char const *s, char const *set)
 
 static int	ft_check_right(char const *s, char const *set)
 {
-	int	k;
-	int 	k2;
+	int		k;
+	int		k2;
 
 	k = ft_strlen(s) - 1;
 	k2 = ft_strlen(set) - 1;
@@ -45,7 +47,7 @@ static int	ft_check_right(char const *s, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int left;
 	int right;
@@ -56,12 +58,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	right = ft_check_right(s1, set);
 	size_s1 = ft_strlen(s1);
 	size_set = ft_strlen(set);
-	if(left == 1 && right == 1)
-		return ft_substr(s1, size_set, size_s1 - size_set * 2);
-	else if(right == 1)
-		return ft_substr(s1, 0, size_s1 - size_set);
-	else if (left == 1) 
-		return ft_substr(s1, size_set, size_s1 - size_set);
+	if (left == 1 && right == 1)
+		return (ft_substr(s1, size_set, size_s1 - size_set * 2));
+	else if (right == 1)
+		return (ft_substr(s1, 0, size_s1 - size_set));
+	else if (left == 1)
+		return (ft_substr(s1, size_set, size_s1 - size_set));
 	else
-		return (char*)s1;
+		return ((char*)s1);
 }

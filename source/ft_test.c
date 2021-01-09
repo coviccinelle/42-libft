@@ -13,14 +13,15 @@
 #include <../includes/libft.h>
 
 size_t	ft_strlen(const char *str);
-int	ft_test(const char *str, char c)
+
+int		ft_test(const char *str, char c)
 {
 	unsigned int	i;
 	unsigned int	str_count;
 
 	i = 0;
 	str_count = 0;
-	while(str[i] && str[i] == c)
+	while (str[i] && str[i] == c)
 	{
 		str_count++;
 	}

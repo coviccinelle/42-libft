@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
+
 char	*ft_strdup(const char *s1)
 {
-	char *str;
-	int i;
-	int size;
-	
+	char	*str;
+	int		i;
+	int		size;
+
 	size = 0;
 	while (s1[size])
 	{
@@ -25,7 +26,7 @@ char	*ft_strdup(const char *s1)
 	str = malloc((size + 1) * sizeof(char));
 	if (!str)
 	{
-		return(NULL);
+		return (NULL);
 		errno = ENOENT;
 	}
 	i = 0;
