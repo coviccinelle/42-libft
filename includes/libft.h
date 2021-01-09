@@ -53,6 +53,6 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *str, int fd);
 
 
-int		ft_test(const char *str, char c);
+int		ft_count_strs(const char *str, char c);
 
 #endif

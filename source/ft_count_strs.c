@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.c                                          :+:      :+:    :+:   */
+/*   ft_count_strs.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,16 +14,29 @@
 
 size_t	ft_strlen(const char *str);
 
-int		ft_test(const char *str, char c)
+int		ft_count_strs(const char *str, char c)
 {
 	unsigned int	i;
-	unsigned int	str_count;
+	unsigned int	count_strs;
 
 	i = 0;
-	str_count = 0;
-	while (str[i] && str[i] == c)
+	count_strs = 0;
+	while (str[i])
 	{
-		str_count++;
+		if (str[0] != c)
+		{
+			count_strs = 1;
+		}
+		while (str[i - 1] == c && str[i] == c)
+			i++;
+		if (str[i - 1] == c && str[i] != c)
+		{
+			while (str[i] != c)
+			{
+				i++;
+			}
+			count_strs++;
+		}
 	}
-	return (str_count);
+	return (count_strs);
 }

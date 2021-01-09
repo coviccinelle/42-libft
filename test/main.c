@@ -13,11 +13,11 @@
 #include <../includes/libft.h>
 #include <stdio.h>
 
-int main(){
-
-	const char *str = "Hello beautiful boy";
+int main()
+{
+	const char *str = "  Hello boubou  baby have a good day  ";
 	int c = 'b';
-	printf("Hello beautiful baby boy -> %d\n", ft_test(str, c));
+	printf(" Hello boubou  baby  have a good day  -> %d\n", ft_count_strs(str, c));
 	printf("coucou -> %zu", ft_strlen("coucou"));
 	return 0;
 }

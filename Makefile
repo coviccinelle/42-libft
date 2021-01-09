@@ -23,7 +23,7 @@ RM	=	rm -rf
 
 SRC	=	ft_substr.c \
 		ft_strlen.c \
-		ft_test.c \
+		ft_count_strs.c \
 
 .SILENT:
 
