@@ -21,22 +21,20 @@ int		ft_count_strs(const char *str, char c)
 
 	i = 0;
 	count_strs = 0;
+	while (str[i] && str[i] == c)
+		i++;
 	while (str[i])
 	{
-		if (str[0] != c)
+		if (str[i] == c)
 		{
-			count_strs = 1;
-		}
-		while (str[i - 1] == c && str[i] == c)
-			i++;
-		if (str[i - 1] == c && str[i] != c)
-		{
-			while (str[i] != c)
-			{
-				i++;
-			}
 			count_strs++;
+			while (str[i] && str[i] == c)
+				i++;
+			continue;
 		}
+		i++;
 	}
+	if (str[i - 1] != c)
+		count_strs++;
 	return (count_strs);
 }

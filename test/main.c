@@ -15,9 +15,9 @@
 
 int main()
 {
-	const char *str = "  Hello boubou  baby have a good day  ";
-	int c = 'b';
-	printf(" Hello boubou  baby  have a good day  -> %d\n", ft_count_strs(str, c));
+	const char *str = "  Hello coucou  bebe b";
+	int c = ' ';
+	printf(" Hello coucou   bebe b -> %d\n", ft_count_strs(str, c));
 	printf("coucou -> %zu", ft_strlen("coucou"));
 	return 0;
 }

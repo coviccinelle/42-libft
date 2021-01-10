@@ -11,42 +11,79 @@
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
-int	ft_strlen(const char *str);
-static unsigned int	ft_count_strs(const char *str, char c)
+
+int						ft_strlen(const char *str);
+
+static unsigned int		ft_count_strs(const char *str, char c)
 {
 	unsigned int	i;
-	unsigned int	str_count;
+	unsigned int	count_strs;
 
 	i = 0;
-	str_count = 0;
-	while(str[i] && str[i] == c)
+	count_strs = 0;
+	while (str[i] && str[i] == c)
+		i++;
+	while (str[i])
 	{
-		str_count++;
+		if (str[i] == c)
+		{
+			count_strs++;
+			while (str[i] && str[i] == c)
+				i++;
+			continue;
+		}
+		i++;
 	}
-	return (str_count);
+	if (str[i - 1] != c)
+		count_strs++;
+	return (count_strs);
 }
 
-static	unsigned char	*ft_position_c(unsigned char *str, char c)
+static	char	**ft_malloc_failed(char **tab)
 {
-	unsigned char	i;
-	unsigned int	position;
-	unsigned char	*str_pos;
+	int	i;
 
 	i = 0;
-	position = 0;
-	if (!(str_pos = (char *)malloc(sizeof(char) * ft_count_strs(str) + 2)))
-		return (NULL);
-	while (str[i] && i < (ft_count_strs(str) + 2))
+	while (tab[i])
 	{
-		while (str[i] == c)
-			position++;
-
+		free(tab[i]);
+		i++;
 	}
-
+	free(tab);
+	return (NULL);
 }
 
+static	char	**ft_fill_tab(char **tab, int i)
+{
+	unsigned int	i;
+	unsigned int	count_strs;
+
+	i = 0;
+	if(!(**tab = (char *)malloc(sizeof(char*) * (count_strs + 1))))
+		return (NULL);
+}
 char	**ft_split(char const *s, char c)
 {
-	malloc
+	unsigned int	i;
+	unsigned int	count_strs;
+	char			**tab;
+
+	i = 0;
+	count_strs = ft_count_strs(s, c);
+	if (!(**tab = (char *)malloc(sizeof(char *) * (count_strs + 1))))
+		return (ft_malloc_failed(**tab));
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i] && tab[count_strs])
+	{
+		if (s[i] == c)
+		{
+			tab[count_strs] = s[i];
+			count_strs--;
+			while (s[i] == c)
+		}
+		i++;
+	}
+
 }
 
