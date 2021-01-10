@@ -53,15 +53,46 @@ static	char	**ft_malloc_failed(char **tab)
 	return (NULL);
 }
 
-static	char	**ft_fill_tab(char **tab, int i)
+
+static	int			ft_count_chars(const char *s, char c, int i)
 {
-	unsigned int	i;
-	unsigned int	count_strs;
+	unsigned int	count_chars;
+
+	count_chars = 0;
+	while (s[i] && s[i] != c)
+	{
+		count_chars++;
+		i++;
+	}
+	return (count_chars);
+}
+
+static	char	**fill_tab(char const *s, char **tab, char c, int l)
+{
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
-	if(!(**tab = (char *)malloc(sizeof(char*) * (count_strs + 1))))
-		return (NULL);
+	j = 0;
+	while (s[i] && j < l)
+	{
+		k = 0;
+		while (s[i] == c)
+			i++;
+		tab[j] = (char *)malloc(sizeof(char) * count_chars(s, c, i) + 1);
+		if (tab[j] = NULL)
+			return (ft_malloc_failed(tab, j));
+		while (s[i] && s[i] != c)
+			tab[j][k++] = s[i++];
+		tab[j][k] = '\0';
+		j++;
+	}
+	tab[j] = 0;
+	return (tab);
 }
+
+
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
