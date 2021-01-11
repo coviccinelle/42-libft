@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.c                                          :+:      :+:    :+:   */
+/*   ft_testsplit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,25 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int		numstring(char const *s1, char c)
+int			ft_strlen(char *s)
+{
+	int i;
+	
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+void		ft_putendl_fd(char *s, int fd)
+{
+	if (!s)
+		return;
+	write (fd, s, ft_strlen(s));
+	write (fd, '\n', 1);
+}
+
+static int		numstring(char const *s1, char c)
 {
 	int	comp;
 	int	cles;
@@ -100,18 +118,18 @@ char			**ft_split(char const *s, char c)
 	return (affect(s, dst, c, l));
 }
 
-
 int	main()
 {
-	const char *s = "   hello  couccou heheh sjas k sk  ";
-	char c = ' ';
-//	char **tab;
-//	static int numstring = numstring(s, c);
-//	while (tab[numstring])
-//	{
-//		printf("%.*s\n", numstring(s, c), ft_split(s, c));
-//		numstring--;
-//	}
-	printf("%s\n", ft_split(s, c));
-	return 0;
+	char **tab;
+	unsigned int i;
+
+	i = 0;
+	tab = ft_split(",  hello, sp    plit ,,,,,    th,,,,is,pls, , , ", "i");
+	if (!tab[0])
+		ft_putendl_fd("ok\n", 1);
+	while (tab[i])
+	{
+		ft_putendl_fd(tab[i], 1);
+		i++;
+	}
 }

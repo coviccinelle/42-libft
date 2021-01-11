@@ -92,25 +92,13 @@ static	char	**fill_tab(char const *s, char **tab, char c, int l)
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	i;
+	char			**tab;;
 	unsigned int	count_strs;
-	char		**tab;
 
-	i = 0;
+	if (!s)
+		return (0);
 	count_strs = ft_count_strs(s, c);
-	if (!(**tab = (char *)malloc(sizeof(char *) * (count_strs + 1))))
+	if (!(**tab = (char **)malloc(sizeof(char *) * (count_strs + 1))))
 		return (ft_malloc_failed(**tab));
-	while (s[i] && s[i] == c)
-		i++;
-	while (s[i] && tab[count_strs])
-	{
-		if (s[i] == c)
-		{
-			tab[count_strs] = s[i];
-			count_strs--;
-			while (s[i] == c)
-		}
-		i++;
-	}
+	return (fill_tab(s, tab, c, count_strs));
 }
-

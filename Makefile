@@ -24,6 +24,7 @@ RM	=	rm -rf
 SRC	=	ft_substr.c \
 		ft_strlen.c \
 		ft_split.c \
+		ft_putendl.c \
 
 .SILENT:
 

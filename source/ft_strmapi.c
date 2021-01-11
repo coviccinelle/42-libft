@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <../includes/libft>
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		i;
+	unsigned char *newstr;
+
+	i = 0;
+	while (s[i])
+	{
+		s[i] = (*f)(unsigned int, char);
+		i++;
+	}
+	return (newstr);
+}
