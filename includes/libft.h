@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 13:39:17 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/08 09:11:47 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/10 22:57:41 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char		*ft_strchr(const char *str, int c);
 char		*ft_strdup(const char *s1);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		**ft_split(char const *s, char c);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_toupper(int c);
@@ -53,6 +54,5 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *str, int fd);
 
 
-int		ft_count_strs(const char *str, char c);
 
 #endif

@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 16:29:31 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/10 23:05:08 by thi-phng         ###   ########.fr       */
+/*   Created: 2021/01/11 08:57:52 by thi-phng          #+#    #+#             */
+/*   Updated: 2021/01/11 08:58:00 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../includes/libft.h>
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+void	ft_putnbr_fd(int n, int fd)
 {
-	const char *str = "  Hello coucou  bebe b";
-	int c = ' ';
-	printf(" Hello coucou   bebe b -> %s\n", ft_split(str, c));
-	printf("coucou -> %zu", ft_strlen("coucou"));
-	return 0;
+	unsigned int	nb;
+
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = n * (-1);
+	}
+	else
+		nb = n;
+	if (nb < 10)
+		ft_putchar_fd(nb + 48, fd);
+	else
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd(nb % 10 + 48, fd);
+	}
 }

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 16:29:31 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/10 23:05:08 by thi-phng         ###   ########.fr       */
+/*   Created: 2021/01/11 08:58:22 by thi-phng          #+#    #+#             */
+/*   Updated: 2021/01/11 08:58:27 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../includes/libft.h>
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+void	ft_putendl_fd(char *s, int fd)
 {
-	const char *str = "  Hello coucou  bebe b";
-	int c = ' ';
-	printf(" Hello coucou   bebe b -> %s\n", ft_split(str, c));
-	printf("coucou -> %zu", ft_strlen("coucou"));
-	return 0;
+	if (s == NULL)
+		return ;
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
+

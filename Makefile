@@ -6,7 +6,7 @@
 #    By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/06 12:23:32 by thi-phng          #+#    #+#              #
-#    Updated: 2021/01/08 09:27:55 by thi-phng         ###   ########.fr        #
+#    Updated: 2021/01/10 22:56:41 by thi-phng         ###   ########.fr        #
 #                                                                              #
 # *****************************************************************************#
 
@@ -23,7 +23,7 @@ RM	=	rm -rf
 
 SRC	=	ft_substr.c \
 		ft_strlen.c \
-		ft_count_strs.c \
+		ft_split.c \
 
 .SILENT:
 

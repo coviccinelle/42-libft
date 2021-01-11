@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 23:22:24 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/11 08:39:32 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,19 @@ static unsigned int		ft_count_strs(const char *str, char c)
 	return (count_strs);
 }
 
-static	char	**ft_malloc_failed(char **tab)
+static	char	**ft_malloc_failed(char **tab, int j)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
+	while (j > 0)
 	{
-		free(tab[i]);
-		i++;
+		free((void *)tab[i]);
+		j--;
 	}
 	free(tab);
 	return (NULL);
 }
 
 
-static	int			ft_count_chars(const char *s, char c, int i)
+static	int		ft_count_chars(const char *s, char c, int i)
 {
 	unsigned int	count_chars;
 
@@ -80,9 +77,9 @@ static	char	**fill_tab(char const *s, char **tab, char c, int l)
 		k = 0;
 		while (s[i] == c)
 			i++;
-		tab[j] = (char *)malloc(sizeof(char) * count_chars(s, c, i) + 1);
-		if (tab[j] = NULL)
-			return (ft_malloc_failed(tab, j));
+		tab[j] = (char *)malloc(sizeof(char) * ft_count_chars(s, c, i) + 1);
+		if (tab[j] == (NULL))
+			return (ft_malloc_failed((char const **)tab, j));
 		while (s[i] && s[i] != c)
 			tab[j][k++] = s[i++];
 		tab[j][k] = '\0';
@@ -97,7 +94,7 @@ char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	count_strs;
-	char			**tab;
+	char		**tab;
 
 	i = 0;
 	count_strs = ft_count_strs(s, c);
@@ -115,6 +112,5 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-
 }
 
