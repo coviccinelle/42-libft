@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 13:39:17 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 15:49:08 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 21:32:39 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 size_t		ft_strlen(char const *s);
 size_t		ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);

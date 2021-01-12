@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 17:08:04 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 21:37:21 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ char					**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	count_strs = ft_count_strs(s, c);
-	if (!(**tab = (char **)malloc(sizeof(char *) * count_strs + 1)))
-		return (ft_malloc_failed(**tab, count_strs));
+	if (!(**tab = (char)malloc(sizeof(char *) * count_strs + 1)))
+		return (ft_malloc_failed(tab, count_strs));
 	return (fill_tab(tab, c, count_strs));
 }
