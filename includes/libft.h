@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 13:39:17 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 14:41:35 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 15:49:08 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
-void		ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
+void		*ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);

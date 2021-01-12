@@ -6,11 +6,11 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 14:34:28 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 14:39:38 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 16:00:04 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../includes/libft>
+#include <../includes/libft.h>
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

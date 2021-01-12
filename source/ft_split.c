@@ -6,13 +6,13 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 14:43:49 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 17:08:04 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
-int						ft_strlen(const char *str);
+size_t					ft_strlen(const char *str);
 
 static unsigned int		ft_count_strs(const char *str, char c)
 {
@@ -39,65 +39,72 @@ static unsigned int		ft_count_strs(const char *str, char c)
 	return (count_strs);
 }
 
-static	char	**ft_malloc_failed(char **tab, int j)
+static char				**ft_malloc_failed(char **tab, int j)
 {
 	while (j > 0)
 	{
-		free((void *)tab[i]);
+		free((void *)tab[j]);
 		j--;
 	}
 	free(tab);
 	return (NULL);
 }
 
-
-static	int		ft_count_chars(const char *s, char c, int i)
+static char				*fill_strs(const char *s, char c)
 {
-	unsigned int	count_chars;
-
-	count_chars = 0;
-	while (s[i] && s[i] != c)
-	{
-		count_chars++;
-		i++;
-	}
-	return (count_chars);
-}
-
-static	char	**fill_tab(char const *s, char **tab, char c, int l)
-{
-	int		i;
-	int		j;
-	int		k;
+	unsigned int	i;
+	char			*each_str;
 
 	i = 0;
-	j = 0;
-	while (s[i] && j < l)
+	while (s[i] && s[i] != c)
+		i++;
+	if (!(each_str = malloc(sizeof(char) * i + 1)))
+		return (0);
+	i = 0;
+	while (s[i] && s[i] != c)
 	{
-		k = 0;
-		while (s[i] == c)
-			i++;
-		if (!(tab[j] = (char *)malloc(sizeof(char) * ft_count_chars(s, c, i) + 1)))
-			return (ft_malloc_failed((char const **)tab, j));
-		while (s[i] && s[i] != c)
-			tab[j][k++] = s[i++];
-		tab[j][k] = '\0';
-		j++;
+		each_str[i] = s[i];
+		i++;
 	}
-	tab[j] = 0;
+	each_str[i] = '\0';
+	return (each_str);
+}
+
+static	char			**fill_tab(char **tab, char c, int count_strs)
+{
+	int		i;
+	int		k;
+	char	*s;
+
+	s = (NULL);
+	i = 0;
+	k = 0;
+	count_strs = ft_count_strs(s, c);
+	while (s[i] == c)
+		i++;
+	while (s[i] && k < count_strs)
+	{
+		while (s[i] != c && i < k)
+		{
+			tab[k] = fill_strs(s, c);
+			k++;
+		}
+		i++;
+	}
+	tab[k] = 0;
 	return (tab);
 }
 
-
-char	**ft_split(char const *s, char c)
+char					**ft_split(char const *s, char c)
 {
-	char			**tab;;
+	char			**tab;
 	unsigned int	count_strs;
 
+	tab = (NULL);
 	if (!s)
 		return (0);
 	count_strs = ft_count_strs(s, c);
-	if (!(**tab = (char **)malloc(sizeof(char *) * (count_strs + 1))))
-		return (ft_malloc_failed(**tab));
-	return (fill_tab(s, tab, c, count_strs));
+	if (!(**tab = (char **)malloc(sizeof(char *) * count_strs + 1)))
+		return (ft_malloc_failed(**tab, count_strs));
+	return (fill_tab(tab, c, count_strs));
 }

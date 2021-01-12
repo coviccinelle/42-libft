@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 12:22:55 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:31:24 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 17:05:32 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_putstr_fd(char *str, int fd)
 {
 	if (!str)
-		return (0);
-	write (fd, str, ft_strlen(str));
+		return ;
+	write(fd, str, ft_strlen(str));
 }

@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 09:53:45 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:32:28 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 15:58:10 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ char	*ft_strdup(const char *s1)
 	}
 	str = malloc((size + 1) * sizeof(char));
 	if (!str)
-	{
 		return (NULL);
-		errno = ENOENT;
-	}
 	i = 0;
 	while (s1[i])
 	{

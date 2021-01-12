@@ -6,13 +6,13 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 18:13:52 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:36:43 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 15:59:08 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
-int			ft_strlen(char const *str);
+size_t		ft_strlen(char const *str);
 
 char		*ft_substr(char const *str, unsigned int start, size_t len);
 

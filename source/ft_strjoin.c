@@ -6,13 +6,13 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:47:37 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:32:47 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 15:58:50 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
