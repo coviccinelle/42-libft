@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 13:39:17 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/10 22:57:41 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 14:41:35 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,18 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_atoi(const char *str);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_toupper(int c);
+int			ft_tolower(int c);
+int			ft_atoi(const char *str);
+int			ft_isalnum(int c);
+int			ft_isalpha(int c);
+int			ft_isascii(int c);
+int			ft_isdigit(int c);
+int			ft_isprint(int c);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 void		*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void		ft_bzero(void *s, size_t n);

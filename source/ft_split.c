@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/11 08:39:32 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/12 14:43:49 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ static	char	**fill_tab(char const *s, char **tab, char c, int l)
 		k = 0;
 		while (s[i] == c)
 			i++;
-		tab[j] = (char *)malloc(sizeof(char) * ft_count_chars(s, c, i) + 1);
-		if (tab[j] == (NULL))
+		if (!(tab[j] = (char *)malloc(sizeof(char) * ft_count_chars(s, c, i) + 1)))
 			return (ft_malloc_failed((char const **)tab, j));
 		while (s[i] && s[i] != c)
 			tab[j][k++] = s[i++];

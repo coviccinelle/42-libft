@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 08:39:26 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/11 08:39:28 by thi-phng         ###   ########.fr       */
+/*   Created: 2021/01/12 14:34:28 by thi-phng          #+#    #+#             */
+/*   Updated: 2021/01/12 14:39:38 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
-	unsigned char *newstr;
+	char	*newstr;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
+	if (!(newstr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
 	while (s[i])
 	{
-		s[i] = (*f)(unsigned int, char);
+		newstr[i] = f(i, s[i]);
 		i++;
 	}
+	newstr[i] = '\0';
 	return (newstr);
 }
