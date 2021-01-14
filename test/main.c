@@ -6,9 +6,19 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 16:29:31 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 15:03:04 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/14 13:19:18 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
+void	test_ft_bzero()
+{
+	ft_bzero(NULL, 5);	
+}
+
+int main()
+{
+	test_ft_bzero();
+	return 0;
+}
