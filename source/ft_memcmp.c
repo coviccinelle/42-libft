@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 12:12:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/16 15:36:42 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/18 09:42:20 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 
@@ -29,4 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-

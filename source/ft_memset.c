@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 17:43:10 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/14 14:24:54 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/18 09:30:11 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		str[i] = (unsigned char)c; // *(str + i)
+		str[i] = (unsigned char)c;
 		i++;
 	}
 	return (b);

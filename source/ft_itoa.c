@@ -6,13 +6,81 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 16:22:29 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/17 20:53:06 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/18 13:53:26 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
+/*
+static	char	*ft_reverse(char *str)
+{
+	int		i;
+	int		j;
+	char	temp;
 
+	i = 0;
+	j = ft_strlen(str);
+	while (j > i)
+	{
+		temp = str[i];
+		j--;
+		str[i] = str[j];
+		i++;
+		str[j] = temp;
+	}
+//	str[j] = '\0';
+	return (str);
+}
+
+static char	*ft_check(int n, char *str)
+{
+	int	i;
+
+	i = 0;
+	if (n == -2147483648)
+	{
+		str = "-2147483648";
+		return (str);
+	}
+	else if (n == 0)
+	{
+		str[i] = '0';
+		return (str);
+	}
+	return (0);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		i;
+	int		sign;
+
+	i = 0;
+	sign = 0;
+	if (!(str = malloc(sizeof(char) * 12)))
+			return (NULL);
+	if (n == -2147483648 || n == 0)
+		return (ft_check(n, str));
+	if (n < 0)
+	{
+		sign = 1;
+		n = -n;
+	}
+	while (n != 0)
+	{
+		str[i] = (n % 10) + '0';
+		i++;
+		n = n / 10;
+	}
+	if (sign == 1)
+		str[i] = '-';
+	return (ft_reverse(str));
+}
+*/
+
+/*
 static void		lengths(int n, size_t *len, int *weight)
 {
 	*len = 1;
@@ -56,22 +124,40 @@ char			*ft_itoa(int n)
 	str[cur] = '\0';
 	return (str);
 }
+*/
 
 
-
-/*
 static int		sizelen(unsigned int nb)
 {
 	unsigned int	size;
 
-	size = 0;
+	size = 1;
+	if (nb == 0)
+		size = 2;
 	while (nb >= 10)
 	{
 		nb = nb / 10;
 		size++;
 	}
-	size = size + 1;
 	return (size);
+}
+
+static char	*ft_check(int n, char *str)
+{
+	int	i;
+
+	i = 0;
+	if (n == -2147483648)
+	{
+		str = "-2147483648";
+		return (str);
+	}
+	else if (n == 0)
+	{
+		str[i] = '0';
+		return (str);
+	}
+	return (0);
 }
 
 static char		*conver(char *s, int n, unsigned int i)
@@ -80,7 +166,6 @@ static char		*conver(char *s, int n, unsigned int i)
 
 	if (n < 0)
 	{
-		i = 0;
 		nb = (unsigned int)(n * -1);
 		s[i] = '-';
 	}
@@ -94,24 +179,48 @@ static char		*conver(char *s, int n, unsigned int i)
 	return (s);
 }
 
+/*
 char			*ft_itoa(int n)
 {
 	unsigned int	size;
 	char			*str;
 	unsigned int	nb;
-	unsigned int	i;
 
-	i = 0;
-	str = (NULL);
 	nb = (unsigned int)n;
 	size = (unsigned int)sizelen(nb);
-	if ((n < 0) && (str[i] = '-'))
-		size = size + 1;
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	if (n < 0 && (str[i] = '-'))
+	if (n < 0 && str[i] = '-')
 		size++;
-	i = size - 1;
-	return (conver(str, n, i));
+	if (!(str = (char *)malloc(sizeof(char) * size)))
+		return (NULL);
+	str = conver(str, n, size - 1);
+	return (str);
 }
 */
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		i;
+	int		sign;
+
+	i = 0;
+	sign = 0;
+	if (!(str = malloc(sizeof(char) * sizelen(n))))
+			return (NULL);
+	if (n == -2147483648 || n == 0)
+		return (ft_check(n, str));
+	if (n < 0)
+	{
+		sign = 1;
+		n = -n;
+	}
+	while (n != 0)
+	{
+		str[i] = (n % 10) + '0';
+		i++;
+		n = n / 10;
+	}
+	if (sign == 1)
+		str[i] = '-';
+	return (conver(str, n, sizelen(n) - 1));
+}

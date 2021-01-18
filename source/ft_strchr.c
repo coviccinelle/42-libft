@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 14:51:58 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/16 18:37:16 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/18 11:41:41 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 0;
 	str = (char *)s;

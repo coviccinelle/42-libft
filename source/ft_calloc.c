@@ -6,13 +6,11 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 09:28:13 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/16 13:54:26 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/18 09:45:27 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
-
-void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t count, size_t size)
 {

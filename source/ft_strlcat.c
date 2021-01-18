@@ -6,13 +6,11 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 16:23:44 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/13 17:54:59 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/18 09:46:42 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
-
-size_t	ft_strlen(const char *restrict str);
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src,
 		size_t dstsize)
