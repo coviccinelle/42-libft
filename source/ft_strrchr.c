@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:48:52 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:35:33 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/16 19:27:49 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 size_t	ft_strlen(const char *str);
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	ct;
+	char		*cur;
 
-	i = ft_strlen(str);
-	ct = (char)c;
-	while (*str)
+	cur = (char *)s + ft_strlen(s);
+	while (*cur != c)
 	{
-		if (str[i] == ct)
-			return (char *)&str[i];
-		i--;
+		if (cur == s)
+			return (0);
+		cur--;
 	}
-	return (0);
+	return (cur);
 }

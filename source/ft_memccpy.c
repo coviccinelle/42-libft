@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 11:00:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/14 12:30:16 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/14 14:31:44 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,
 	source = (unsigned char *)src;
 	if (!n)
 		return (NULL);
-	while (i <= n)
+	while (i < n)
 	{
 		dest[i] = source[i];
-		if (dest[i] == (unsigned char)c || source[i] == (unsigned char)c)
-			return (unsigned char *)&dst[i];
+		if (source[i] == (unsigned char)c)
+			return dst + (i + 1);
 		i++;
 	}
 	return (NULL);

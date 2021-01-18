@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:47:37 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/12 15:58:50 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/17 12:01:20 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		k;
-	char	*str;
+	char		*str;
 
 	i = 0;
 	k = 0;

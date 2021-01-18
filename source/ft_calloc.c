@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 09:28:13 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:24:44 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/16 13:54:26 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*str;
 
-	str = malloc(count * sizeof(size));
-	if (!str)
+	if (!(str = malloc(size * count)))
 		return (str);
-	ft_bzero(str, size * count);
+	ft_bzero(str, (size * count));
 	return (str);
 }

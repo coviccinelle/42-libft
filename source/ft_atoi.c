@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 17:00:40 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/07 18:24:17 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/17 18:47:32 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ int		ft_atoi(const char *str)
 	i = 0;
 	res = 0;
 	neg = 1;
-	if (str[i] == '+' || str[i] == '-')
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' ||
+			str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (!str)
+		return (0);
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			neg = -1;
