@@ -6,26 +6,24 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 17:47:37 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/17 12:01:20 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/19 13:03:06 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
-size_t	ft_strlen(const char *str);
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		k;
-	char		*str;
+	char	*str;
 
 	i = 0;
 	k = 0;
 	if (!(str = (char *)malloc(sizeof(char) *
 					(ft_strlen(s1) + ft_strlen(s2) + 1))))
 		return (NULL);
-	while (s1[i] && s2[k])
+	while (s1[i] || s2[k])
 	{
 		while (s1[i])
 		{

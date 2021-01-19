@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 16:29:31 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/16 19:02:44 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/19 10:57:25 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,24 @@ int	test_strrchr()
 	return (0);
 }
 
+int	test_itoa()
+{
+	int n = -2147483648;
+	printf("%s\n", ft_itoa(n));
+	//printf("%d\n", itoa(n));
+	
+	return (0);
+}
+
+
 int main()
 {
+	test_itoa();
 	//test_ft_bzero();
 	//test_ft_memccpy();
 //	test_ft_memmove();
 //	test_atoi();
 //	test_strchr();
-	test_strrchr();
+//	test_strrchr();
 	return 0;
 }

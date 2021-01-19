@@ -6,12 +6,13 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/17 19:06:34 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/19 13:04:22 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
+/*
 int	ft_count(char *s, char sep)
 {
 	int	i;
@@ -41,6 +42,8 @@ char	*ft_strdup_sep(char *s, char sep)
 	dest = malloc(sizeof(char) * (i + 1));
 	if (!dest)
 		return (NULL);
+	if (!sep)
+		return (s);
 	i = 0;
 	while (s[i] != sep)
 	{
@@ -96,6 +99,7 @@ char	**ft_split(char const *s, char c)
 		i++;
 	return (new);
 }
+*/
 
 /*
 static int		ft_cnt_parts(const char *s, char c)
@@ -160,8 +164,6 @@ char			**ft_split(char const *s, char c)
 
 */
 
-/*
-size_t					ft_strlen(const char *str);
 
 static unsigned int		ft_count_strs(const char *str, char c)
 {
@@ -170,6 +172,8 @@ static unsigned int		ft_count_strs(const char *str, char c)
 
 	i = 0;
 	count_strs = 0;
+	if (!c)
+		count_strs = 0;
 	while (str[i] && str[i] == c)
 		i++;
 	while (str[i])
@@ -257,4 +261,4 @@ char					**ft_split(char const *s, char c)
 		return (ft_malloc_failed(tab, count_strs));
 	return (fill_tab(tab, c, count_strs));
 }
-*/
+
