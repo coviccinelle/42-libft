@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 16:22:29 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/18 13:53:26 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/19 10:30:02 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,16 +127,21 @@ char			*ft_itoa(int n)
 */
 
 
-static int		sizelen(unsigned int nb)
+static int		sizelen(int n)
 {
 	unsigned int	size;
 
 	size = 1;
-	if (nb == 0)
-		size = 2;
-	while (nb >= 10)
+	if (n == 0)
+		return (size);
+	if (n < 0)
 	{
-		nb = nb / 10;
+		size++;
+		n = -n;
+	}
+	while (n >= 10)
+	{
+		n = n / 10;
 		size++;
 	}
 	return (size);
@@ -144,9 +149,6 @@ static int		sizelen(unsigned int nb)
 
 static char	*ft_check(int n, char *str)
 {
-	int	i;
-
-	i = 0;
 	if (n == -2147483648)
 	{
 		str = "-2147483648";
@@ -154,7 +156,7 @@ static char	*ft_check(int n, char *str)
 	}
 	else if (n == 0)
 	{
-		str[i] = '0';
+		*str = '0';
 		return (str);
 	}
 	return (0);
@@ -162,41 +164,41 @@ static char	*ft_check(int n, char *str)
 
 static char		*conver(char *s, int n, unsigned int i)
 {
-	unsigned int	nb;
-
 	if (n < 0)
 	{
-		nb = (unsigned int)(n * -1);
-		s[i] = '-';
+		n = -n;
+		s[0] = '-';
 	}
-	nb = (unsigned int)n;
 	while (n >= 10)
 	{
-		s[i--] = (char)(nb % 10 + 48);
-		nb = nb / 10;
+		i--;
+		s[i] = (n % 10) + '0';
+		n = n / 10;
 	}
+	i--;
+	if (n >= 1 && n < 10)
+		s[i--] = n + '0';
 	s[i] = '\0';
 	return (s);
 }
 
-/*
 char			*ft_itoa(int n)
 {
 	unsigned int	size;
 	char			*str;
-	unsigned int	nb;
+	unsigned int	i;
 
-	nb = (unsigned int)n;
-	size = (unsigned int)sizelen(nb);
-	if (n < 0 && str[i] = '-')
-		size++;
-	if (!(str = (char *)malloc(sizeof(char) * size)))
+	i = 0;
+	size = (unsigned int)sizelen(n);
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	str = conver(str, n, size - 1);
+	if (n == -2147483648 || n == 0)
+		return (ft_check(n, str));
+	str = conver(str, n, size);
 	return (str);
 }
-*/
 
+/*
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -224,3 +226,4 @@ char	*ft_itoa(int n)
 		str[i] = '-';
 	return (conver(str, n, sizelen(n) - 1));
 }
+*/
