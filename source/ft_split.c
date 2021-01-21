@@ -6,13 +6,12 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/19 13:04:22 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/20 13:16:28 by macos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <../includes/libft.h>
 
-/*
 int	ft_count(char *s, char sep)
 {
 	int	i;
@@ -99,71 +98,8 @@ char	**ft_split(char const *s, char c)
 		i++;
 	return (new);
 }
-*/
 
 /*
-static int		ft_cnt_parts(const char *s, char c)
-{
-	int		cnt;
-	int		in_substring;
-
-	in_substring = 0;
-	cnt = 0;
-	while (*s)
-	{
-		if (in_substring == 1 && *s == c)
-			in_substring = 0;
-		if (in_substring == 0 && *s != c)
-		{
-			in_substring = 1;
-			cnt++;
-		}
-		s++;
-	}
-	return (cnt);
-}
-
-static int		ft_wlen(const char *s, char c)
-{
-	int		len;
-
-	len = 0;
-	while (*s != c && *s)
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
-
-char			**ft_split(char const *s, char c)
-{
-	char	**t;
-	int		nb_word;
-	int		index;
-
-	index = 0;
-	nb_word = ft_cnt_parts((const char *)s, c);
-	t = (char **)malloc(sizeof(*t) * (ft_cnt_parts((const char *)s, c) + 1));
-	if (t == NULL)
-		return (NULL);
-	while (nb_word--)
-	{
-		while (*s == c && *s)
-			s++;
-		t[index] = ft_substr((const char *)s, 0, ft_wlen((const char *)s, c));
-		if (t[index] == NULL)
-			return (NULL);
-		s = s + ft_wlen(s, c);
-		index++;
-	}
-	t[index] = NULL;
-	return (t);
-}
-
-
-*/
-
 
 static unsigned int		ft_count_strs(const char *str, char c)
 {
@@ -261,4 +197,4 @@ char					**ft_split(char const *s, char c)
 		return (ft_malloc_failed(tab, count_strs));
 	return (fill_tab(tab, c, count_strs));
 }
-
+*/
