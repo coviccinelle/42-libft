@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 16:29:31 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/19 10:57:25 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/21 11:27:03 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@ void	test_ft_bzero()
 
 void	test_ft_memmove()
 {
-	char *source = "Coucou vi blablabla";
-	char *dest;
+//	char *source = '\0';
+//	char *dest = '\0';
 
-	dest = source + 5;
-	printf("%s\n", dest);
+//	dest = source + 5;
+//	printf("%s\n", dest);
 	
 	//printf("%s", ft_memmove(source, dest, 5));
-	printf("%s", memmove(dest, source, 5));
+	printf("%s\n", memmove(((void *)0), ((void *)0), 5));
+	printf("%s\n", ft_memmove(((void *)0), ((void *)0), 5));
 }
 
 int	test_atoi()
 {
-	char *str = "         -+   ";
+	char *str = "999999999999999999999999";
 	printf("%d\n", ft_atoi(str));
 	printf("%d\n", atoi(str));
 	return 0;
@@ -67,11 +68,11 @@ int	test_itoa()
 
 int main()
 {
-	test_itoa();
+//	test_itoa();
 	//test_ft_bzero();
 	//test_ft_memccpy();
 //	test_ft_memmove();
-//	test_atoi();
+	test_atoi();
 //	test_strchr();
 //	test_strrchr();
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 12:12:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/18 09:34:57 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/21 10:58:20 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,21 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (len == 0)
 		return (dst);
+	if (!dst && !src)
+		return (dst);
 	if (src < dst)
 	{
-		i = len;
-		while (i > 0)
+		while (len > 0)
 		{
-			i--;
-			((char *)dst)[i] = ((char *)src)[i];
+			len--;
+			((char *)dst)[len] = ((char *)src)[len];
 		}
 	}
-	else
+	i = 0;
+	while (i < len)
 	{
-		i = 0;
-		while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
 	}
 	return (dst);
 }
