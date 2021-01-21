@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 17:00:40 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/17 18:47:32 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/21 09:50:51 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int res;
-	int neg;
+	int		i;
+	int		res;
+	int		neg;
 
 	i = 0;
 	res = 0;
