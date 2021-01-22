@@ -6,7 +6,7 @@
 /*   By: thi-phng <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:20:34 by thi-phng          #+#    #+#             */
-/*   Updated: 2021/01/21 10:06:24 by thi-phng         ###   ########.fr       */
+/*   Updated: 2021/01/22 10:32:41 by thi-phng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static	char	**ft_fill(int j, char **new, char *s, char c)
 		new[0] = ft_strdup_sep(&s[0], c);
 		k++;
 	}
-	while (s[l] && k < j)
+	while (s[l] && k < j && c)
 	{
 		if (s[l - 1] == c && s[l] != c)
 		{
